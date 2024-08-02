@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Client } from '@stomp/stompjs'; // Doğru import
-import SockJS from 'sockjs-client'; // Doğru import
+import { Client } from '@stomp/stompjs'; 
+import SockJS from 'sockjs-client'; 
 
 const ChatRoom = () => {
     const [messages, setMessages] = useState([]);
@@ -42,9 +42,9 @@ const ChatRoom = () => {
     const sendMessage = () => {
         if (stompClient && message) {
             const chatMessage = {
-                sender: 'User',  // Burayı giriş yapan kullanıcı ile değiştir
+                sender: 'User',  // burani login olan user ile deyisecem
                 content: message,
-                receiver: 'Receiver', // Alıcı kullanıcıyı belirle
+                receiver: 'Receiver', // receiveri set edecem
             };
             stompClient.publish({
                 destination: '/app/chat.sendMessage',
