@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Client } from '@stomp/stompjs'; 
 import SockJS from 'sockjs-client'; 
+import '../styles/ChatRoom.css';
 
 const ChatRoom = () => {
     const [messages, setMessages] = useState([]);
@@ -55,21 +56,23 @@ const ChatRoom = () => {
     };
 
     return (
-        <div>
+        <div className="chat-room">
             <h1>Chat Room</h1>
-            <div>
+            <div className="messages">
                 {messages.map((msg, index) => (
-                    <div key={index}>
+                    <div key={index} className="message">
                         <strong>{msg.sender}: </strong>{msg.content}
                     </div>
                 ))}
             </div>
-            <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-            />
-            <button onClick={sendMessage}>Send</button>
+            <div className="input-container">
+                <input
+                    type="text"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
+                <button onClick={sendMessage}>Send</button>
+            </div>
         </div>
     );
 };

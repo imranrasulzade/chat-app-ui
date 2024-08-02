@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ChatRoom from './ChatRoom';
-import FileUpload from './FileUpload';
+import ChatRoom from './component/ChatRoom';
+import FileUpload from './component/FileUpload';
 
 function App() {
     return (
