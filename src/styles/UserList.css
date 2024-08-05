@@ -1,0 +1,19 @@
+.user-list h2 {
+    margin-bottom: 10px;
+  }
+  
+  .user-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-list li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .user-list li:hover {
+    background-color: #e9e9e9;
+  }
+  

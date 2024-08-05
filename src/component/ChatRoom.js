@@ -43,9 +43,9 @@ const ChatRoom = () => {
     const sendMessage = () => {
         if (stompClient && message) {
             const chatMessage = {
-                sender: 'User',  // burani login olan user ile deyisecem
+                sender: 1,  // burani login olan user ile deyisecem
                 content: message,
-                receiver: 'Receiver', // receiveri set edecem
+                receiver: 2, // receiveri set edecem
             };
             stompClient.publish({
                 destination: '/app/chat.sendMessage',
@@ -61,7 +61,7 @@ const ChatRoom = () => {
             <div className="messages">
                 {messages.map((msg, index) => (
                     <div key={index} className="message">
-                        <strong>{msg.sender}: </strong>{msg.content}
+                        <strong>{msg.senderId}: </strong>{msg.content}
                     </div>
                 ))}
             </div>
