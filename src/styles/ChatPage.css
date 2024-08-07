@@ -1,12 +1,10 @@
-/* ChatPage.css */
-
 .chat-page {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.chat-header {
+.chat-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,57 +13,80 @@
   color: white;
 }
 
-/* Add margin between username and logout button */
-.user-info span {
-  margin-right: 20px;
-}
-
 .chat-container {
   display: flex;
   flex: 1;
+  overflow: hidden;
+}
+
+.user-info span {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: large;
 }
 
 .user-list {
-  width: 250px;
+  width: 300px;
   background-color: #f1f1f1;
   padding: 10px;
   text-align: center;
   overflow-y: auto;
 }
 
+.user-list .search-bar {
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
 .chat-box {
   flex: 1;
-  align-items: center;
-  padding: 20px;
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
   border-left: 1px solid #ccc;
-  height: calc(100vh - 50px);
+  overflow: hidden;
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .messages {
   flex: 1;
   overflow-y: auto;
-  padding-right: 10px;
   display: flex;
   flex-direction: column;
+  padding-right: 10px;
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
 }
 
 .message {
   padding: 10px;
-  margin: 5px 0;
   border-radius: 5px;
-  max-width: 70%;
+  max-width: 80%;
   position: relative;
+  word-wrap: break-word;  
+  white-space: pre-wrap;
 }
 
-.message.sent {
+.sent .message {
   align-self: flex-end;
   background-color: #e1ffc7;
 }
 
-.message.received {
+.received .message {
   align-self: flex-start;
   background-color: #f1f1f1;
 }
@@ -73,15 +94,24 @@
 .timestamp {
   font-size: 0.75rem;
   color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 5px; 
-  right: 7px; 
+  top: 0;
+}
+
+.sent-timestamp {
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.received-timestamp {
+  align-self: flex-start;
+  margin-left: 10px;
 }
 
 .message-input {
   display: flex;
   border-top: 1px solid #ccc;
   padding: 10px;
+  background-color: #f9f9f9;
 }
 
 .message-input input {

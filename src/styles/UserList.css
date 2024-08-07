@@ -1,19 +1,19 @@
-.user-list h2 {
-    margin-bottom: 10px;
-  }
-  
-  .user-list ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .user-list li {
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
-  }
-  
-  .user-list li:hover {
-    background-color: #e9e9e9;
-  }
-  
+.user-list-content {
+  text-align: center;
+  overflow-y: auto;
+  height: calc(85vh - 60px);
+}
+
+.user-list-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list-content li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user-list-content li:hover {
+  background-color: #e1e1e1;
+}

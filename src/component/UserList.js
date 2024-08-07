@@ -7,8 +7,7 @@ function UserList({ users, onUserClick }) {
   }
 
   return (
-    <div className="user-list">
-      <h2>Users</h2>
+    <div className="user-list-content">
       <ul>
         {users.map((user) => (
           <li key={user.id} onClick={() => onUserClick(user)}>
